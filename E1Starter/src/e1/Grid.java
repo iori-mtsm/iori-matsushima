@@ -6,8 +6,9 @@ public class Grid
     protected int cols;         // number of grid columns
     
     protected boolean [][] grid;     // the grid containing blobs
+    
     // You may define helper variables as needed
-    private boolean[][] copygrid;
+    private boolean[][] copygrid;    // initialize a copy of the grid
     
     public Grid(int rows, int cols, boolean[][] grid)
     
@@ -43,7 +44,7 @@ public class Grid
         // make a copy of the grid
         copygrid = (boolean[][]) grid.clone();
         
-        // once X is found, increment the count and erase other X's in the same Blob
+        // once X is found, increment the count and erase the entire blob
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
@@ -96,8 +97,8 @@ public class Grid
         catch (IndexOutOfBoundsException e){};
         
         try{
-            if(copygrid[i+1][j-1])
-                BlobEraser(i+1, j-1);
+            if(copygrid[i+1][j-1]) 
+                BlobEraser(i+1, j-1); 
         }
         catch (IndexOutOfBoundsException e){};
         
