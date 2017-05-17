@@ -61,7 +61,7 @@ public class Grid
     
     // You may define helper methods as needed
     public void BlobEraser(int i, int j)
-    //given the location ij, changes all the X's in the surrounding location
+    // given the location ij of some X, erases all the X's in the same blob
     {
         copygrid[i][j] = false;
         
@@ -72,43 +72,43 @@ public class Grid
         catch (IndexOutOfBoundsException e){};
         
         try{
-            if (grid[i-1][j])
+            if (copygrid[i-1][j])
                 BlobEraser(i-1, j);
         }
         catch (IndexOutOfBoundsException e){};
         
         try{
-            if(grid[i-1][j+1])
+            if(copygrid[i-1][j+1])
                 BlobEraser(i-1, j+1);
         }
         catch (IndexOutOfBoundsException e){};
         
         try{
-            if(grid[i][j-1])
+            if(copygrid[i][j-1])
                 BlobEraser(i, j-1);
         }
         catch (IndexOutOfBoundsException e){};
         
         try{
-            if(grid[i][j+1])
+            if(copygrid[i][j+1])
                 BlobEraser(i, j+1);
         }
         catch (IndexOutOfBoundsException e){};
         
         try{
-            if(grid[i+1][j-1]) 
-                BlobEraser(i+1, j-1); 
+            if(copygrid[i+1][j-1])
+                BlobEraser(i+1, j-1);
         }
         catch (IndexOutOfBoundsException e){};
         
         try{
-            if(grid[i+1][j])
+            if(copygrid[i+1][j])
                 BlobEraser(i+1, j);
         }
         catch (IndexOutOfBoundsException e){};
         
         try{
-            if(grid[i+1][j+1])
+            if(copygrid[i+1][j+1])
                 BlobEraser(i+1, j+1);
         }
         catch (IndexOutOfBoundsException e){};
@@ -116,4 +116,3 @@ public class Grid
     }
     
 }
-
