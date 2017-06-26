@@ -1,5 +1,5 @@
 package e1;
-//////////
+
 public class Grid
 {
     protected int rows;         // number of grid rows
